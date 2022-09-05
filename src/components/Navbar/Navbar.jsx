@@ -1,4 +1,5 @@
 import "./index.scss";
+import logo from "../../images/fakeflix.png";
 
 const Navbar = ({ movieEntity }) => {
   const scrollTopRated = (e) => {
@@ -13,6 +14,9 @@ const Navbar = ({ movieEntity }) => {
   return (
     <div className="Navbar">
       <ul>
+        <li>
+          <img src={logo} alt="fakeflix" />
+        </li>
         <li>
           <a href="/" onClick={scrollTopRated}>
             Vai a movie entity

@@ -1,4 +1,5 @@
 import { memo } from "react";
+
 import "./index.scss";
 
 const MainCard = ({
@@ -18,7 +19,8 @@ const MainCard = ({
       />
       <div className="MainCard__text">
         <h3>{title}</h3>
-        {averageIsVis && <p>{vote_average}</p>}
+
+        {averageIsVis && <p>{vote_average} </p>}
       </div>
     </div>
   );

@@ -1,7 +1,16 @@
+import { useState, useEffect } from "react";
+import LikeBtn from "../LikeBtn";
 import "./index.scss";
 
 const MainModal = ({ data, isVisibile, onModalClick }) => {
-  const { title, overview, poster_path } = data;
+  const { title, overview, poster_path, id } = data;
+  // const [isMarked, setMarked] = useState(false);
+
+  // useEffect(() => {
+  //   if (localStorage.getItem("username")) {
+  //     setMarked(true);
+  //   }
+  // }, [isMarked]);
 
   return (
     isVisibile && (
@@ -16,6 +25,8 @@ const MainModal = ({ data, isVisibile, onModalClick }) => {
             <button onClick={() => onModalClick(false)}>X</button>
             <h2 className="Modal__header">{title}</h2>
             <p className="Modal__desc">{overview}</p>
+            <LikeBtn data={data} />
+            {/* <LikeBtn setMarked={setMarked} isMarked={isMarked} /> */}
           </div>
         </div>
       </div>

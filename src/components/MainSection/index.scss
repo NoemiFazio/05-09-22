@@ -12,6 +12,12 @@
 
   height: fit-content;
 
+  &_div {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+  }
+
   &_right {
     display: flex;
     flex-direction: column;

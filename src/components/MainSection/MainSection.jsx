@@ -26,36 +26,38 @@ const MainSection = ({ modalVisibility }) => {
 
   return (
     <div className="MainSection">
-      {movieLists.popular && (
-        <MainCard
-          cardData={movieLists.popular[0]}
-          modalVisibility={modalVisibility}
-        />
-      )}
-      <div className="MainSection_right">
-        {movieLists.topRated && (
-          <>
-            <TopRatedList
-              cardData={movieLists.topRated.filter(
-                (movie) => movie.vote_average >= 8.0
-              )}
-              nCards={6}
-              modalVisibility={modalVisibility}
-            />
-          </>
-        )}
-        <Counter
-          increase={() => setPage((prev) => prev + 1)}
-          decrease={() => setPage((prev) => prev - 1)}
-          page={page}
-        />
-        {movieLists.upcoming && (
-          <UpcomingList
-            cardData={movieLists.upcoming}
-            nCards={4}
+      <div className="MainSection_div">
+        {movieLists.popular && (
+          <MainCard
+            cardData={movieLists.popular[0]}
             modalVisibility={modalVisibility}
           />
         )}
+        <div className="MainSection_right">
+          {movieLists.topRated && (
+            <>
+              <TopRatedList
+                cardData={movieLists.topRated.filter(
+                  (movie) => movie.vote_average >= 8.0
+                )}
+                nCards={6}
+                modalVisibility={modalVisibility}
+              />
+            </>
+          )}
+          <Counter
+            increase={() => setPage((prev) => prev + 1)}
+            decrease={() => setPage((prev) => prev - 1)}
+            page={page}
+          />
+          {movieLists.upcoming && (
+            <UpcomingList
+              cardData={movieLists.upcoming}
+              nCards={4}
+              modalVisibility={modalVisibility}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
