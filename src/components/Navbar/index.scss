@@ -1,0 +1,27 @@
+@import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
+
+.Navbar {
+  @include flex-element(row, center, center);
+  position: absolute;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  //li ho commentati perché definiti con il sass importato
+  height: 40px;
+  background-color: rgb(22 22 22);
+  z-index: index 9;
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      a {
+        color: $base-color;
+        font-weight: 800;
+        text-decoration: none;
+      }
+    }
+  }
+}
