@@ -8,7 +8,7 @@ import { useState, useRef } from "react";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
-
+  const [favouriteList, setFavouriteList] = useState([]);
   //Modale
   const [modalData, setModalData] = useState({});
   const [isModalVisibile, setModalVisibility] = useState(false);
@@ -29,8 +29,14 @@ function App() {
         data={modalData}
         isVisibile={isModalVisibile}
         onModalClick={setModalVisibility}
+        favouriteList={favouriteList}
+        setFavouriteList={setFavouriteList}
       />
-      <MainSection modalVisibility={onHandleModal} />
+      <MainSection
+        modalVisibility={onHandleModal}
+        favouriteList={favouriteList}
+        setFavouriteList={setFavouriteList}
+      />
       <MainInput inputValue={inputValue} setInputValue={setInputValue} />
       <MovieEntity
         movieEntity={movieEntity}

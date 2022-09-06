@@ -1,5 +1,6 @@
-.UpcomingList {
+.LikedList {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -7,15 +8,19 @@
   width: 100%;
   height: fit-content;
 
-  .UpcomingList_content {
+  h1 {
+    color: white;
+  }
+
+  .LikedList_content {
     display: flex;
     gap: 20px;
     padding-bottom: 10px;
-    width: 800px;
+    width: 1350px;
     overflow-x: scroll;
     overflow-y: hidden;
 
-    .upcomingStyle {
+    .LikedStyle {
       display: flex;
       flex-direction: column;
       justify-content: center;

@@ -6,8 +6,6 @@
   color: white;
   text-transform: uppercase;
 
-  //questa sintassi è usata, rispetto a navbar, perchè in movie entity
-  //abbiamo usato la nominazione bam
   &__info {
     display: flex;
     flex-direction: column;
@@ -91,42 +89,3 @@
     }
   }
 }
-
-// .MovieEntity__info {
-
-// }
-// .MovieEntity h1 {
-//   color: #f22e2e;
-// }
-
-// .MovieEntity__info--title {
-
-// }
-
-// .MovieEntity__info--title h1 {
-//   font-size: 4rem;
-// }
-
-// .MovieEntity__info--bottom {
-
-// }
-
-// .MovieEntity__info--bottom
-
-// .MovieEntity__info--bottom
-
-// .MovieEntity__info--bottom--tagline
-
-// .MovieEntity__poster
-
-// .MovieEntity__book {
-
-// }
-
-// .MovieEntity__book--btn {
-
-// }
-
-// .MovieEntity__book--btn:hover {
-
-// }

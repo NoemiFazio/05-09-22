@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import MainCard from "../MainCard";
 import TopRatedList from "../TopRatedList";
 import UpcomingList from "../UpcomingList";
+import LikedList from "../LikedList";
 import Counter from "../Counter";
 import { GET } from "../../utils/api";
 import "./index.scss";
 
-const MainSection = ({ modalVisibility }) => {
+const MainSection = ({ modalVisibility, favouriteList, setFavouriteList }) => {
   const [movieLists, setMovieLists] = useState({});
+
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -59,6 +61,13 @@ const MainSection = ({ modalVisibility }) => {
           )}
         </div>
       </div>
+      {favouriteList.length && (
+        <LikedList
+          favouriteList={favouriteList}
+          setFavouriteList={setFavouriteList}
+          modalVisibility={modalVisibility}
+        />
+      )}
     </div>
   );
 };

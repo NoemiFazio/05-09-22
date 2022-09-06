@@ -2,7 +2,13 @@ import { useState, useEffect } from "react";
 import LikeBtn from "../LikeBtn";
 import "./index.scss";
 
-const MainModal = ({ data, isVisibile, onModalClick }) => {
+const MainModal = ({
+  data,
+  isVisibile,
+  onModalClick,
+  favouriteList,
+  setFavouriteList,
+}) => {
   const { title, overview, poster_path, id } = data;
   // const [isMarked, setMarked] = useState(false);
 
@@ -25,7 +31,11 @@ const MainModal = ({ data, isVisibile, onModalClick }) => {
             <button onClick={() => onModalClick(false)}>X</button>
             <h2 className="Modal__header">{title}</h2>
             <p className="Modal__desc">{overview}</p>
-            <LikeBtn data={data} />
+            <LikeBtn
+              data={data}
+              favouriteList={favouriteList}
+              setFavouriteList={setFavouriteList}
+            />
             {/* <LikeBtn setMarked={setMarked} isMarked={isMarked} /> */}
           </div>
         </div>

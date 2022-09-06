@@ -1,7 +1,8 @@
 .MainSection {
   padding: 100px 60px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 60px;
   background: rgb(30, 30, 30);
   background-image: linear-gradient(
       rgba(15, 10, 10, 0.949),
@@ -22,17 +23,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* gap: 132px; */
+
     width: 1000px;
     align-items: center;
   }
 }
-
-// .MainSection_right {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-evenly;
-//   /* gap: 132px; */
-//   width: 1000px;
-//   align-items: center;
-// }

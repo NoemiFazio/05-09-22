@@ -3,25 +3,51 @@ import { IconContext } from "react-icons";
 import { HiHeart } from "react-icons/hi";
 import "./index.scss";
 
-const LikeBtn = ({ data }) => {
-  // const [likes, setLikes] = useState(false);
+const LikeBtn = ({ data, favouriteList, setFavouriteList }) => {
   const [isClicked, setIsClicked] = useState(true);
+
+  // const deleteItemHandler = (itemId) => {
+  //   setFavouriteList((prevList) => {
+  //     const updatedList = prevList.filter((liked) => liked.id !== itemId);
+  //     return updatedList;
+  //   });
+  // };
+
+  //localStorage.setItem("users", JSON.stringify(users));
 
   const handleClick = () => {
     setIsClicked(!isClicked);
+
+    // setFavouriteList([
+    //   ...favouriteList,
+    //   {
+    //     id: data.id + "f",
+    //     title: data.title,
+    //     vote_average: data.vote_average,
+    //     poster_path: data.poster_path,
+    //   },
+    // ]);
+
     const likedValue = localStorage.getItem("isLiked");
 
-    if (isClicked === true) {
-      // setLikes(true);
+    if (
+      isClicked === true
+      // &&
+      // favouriteList[obj.id].contains(data.id + "f") === false
+    ) {
       localStorage.setItem(`isLiked${data.id}`, isClicked);
-      // console.log("vero");
+      // localStorage.setItem("favourites", JSON.stringify(favouriteList));
       console.log(data);
+      console.log(favouriteList);
     }
 
     if (isClicked === false) {
-      // setLikes(false);
       localStorage.removeItem(`isLiked${data.id}`, likedValue);
-      // console.log("falso");
+      localStorage.removeItem("favourites", `${data.id}f`);
+
+      // const deleteHandler = () => {
+      //   onDeleteTodo(todo.id);
+      // };
     }
   };
 
